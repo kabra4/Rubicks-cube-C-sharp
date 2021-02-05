@@ -48,7 +48,6 @@ namespace Rubicks_Cube
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
             PaintCube(e);
-            
         }
         private void PaintCube(PaintEventArgs e)
         {
@@ -131,7 +130,7 @@ namespace Rubicks_Cube
             }
         }
 
-
+        // Rotating Cube sides
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -151,7 +150,7 @@ namespace Rubicks_Cube
             int b;
             for (int a = 0; a < 4; a++)
             {
-                if (clockwise != true) b = a == 3 ? 0 : a + 1;
+                if (!clockwise) b = a == 3 ? 0 : a + 1;
                 else b = a == 0 ? 3 : a - 1;
                 for (int l = 0; l < 3; l++)
                 {
@@ -176,23 +175,22 @@ namespace Rubicks_Cube
             int b;
             for (int a = 0; a < 4; a++)
             {
-                if (clockwise) b = a == 3 ? 1 : sideOrder[a + 1];
-                else b = a == 0 ? 5 : sideOrder[a - 1];
+                if (clockwise) b = (a == 3) ? sideOrder[0] : sideOrder[a + 1];
+                else b = (a == 0) ? sideOrder[3] : sideOrder[a - 1];
                 for (int l = 0; l < 3; l++)
                 {
-                    cells[b, l, column] = colorsCopy[a, l, column];
+                    cells[b, l, column] = colorsCopy[sideOrder[a], l, column];
                 }
             }
 
             if (column != 1)
             {
-                clockwise = column == 2 ? clockwise : !clockwise;
-                SideRotate(column, clockwise);
+
+                if (column == 0) clockwise = !clockwise;
+                SideRotate(2 - column, clockwise);
             }
             panel1.Invalidate();
             panel2.Invalidate();
-
-
         }
 
         private void SideRotate(int side, bool clockwise)
