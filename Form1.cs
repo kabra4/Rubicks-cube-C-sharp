@@ -17,7 +17,6 @@ namespace Rubicks_Cube
         {
             InitializeComponent();
             NewCube();
-
         }
 
         // Creating Cube
@@ -50,44 +49,40 @@ namespace Rubicks_Cube
         {
             PaintCube(e);
             
-
-            
         }
         private void PaintCube(PaintEventArgs e)
         {
-            var c = 200/Math.Cos(0.523599);
-            int x = 200/3;
-            var y = c / 3;
-            for (float i = 0; i < 3; i++)
+            int y = (int)Math.Round(213 / Math.Cos(0.523599) / 6);
+            int x = 213 / 3;
+            Point[] points = new Point[4];
+            Color cellCol;
+            for (int i = 0; i < 3; i++)
             {
-                for (float l = 0; l < 3; l++)
+                for (int l = 0; l < 3; l++)
                 {
                     // Side y
-                    Point[] cellPoints =
-                    {
-                        new Point((int)(300 + l * x), (int)(300 + y * (i - l/2))),
-                        new Point((int)(300 + (l + 1) * x), (int)(300 + i*y - (l+1)/2*y)),
-                        new Point((int)(300 + (l+1)*x), (int)(300 + (i+1)*y - (l+1)*y/2)),
-                        new Point((int)(300 + l*x), (int)(300 + (i+1)*y - l*y/2))
-                    };
-                    Color cellColor = cells[2, (int)i, (int)l];
-                    PaintCell(e, cellPoints, cellColor);
+                    points[0] = new Point(213 + l * x, 246 + y * (i * 2 - l));
+                    points[1] = new Point(points[0].X + x, points[0].Y - y);
+                    points[2] = new Point(points[1].X, points[1].Y + y * 2);
+                    points[3] = new Point(points[0].X, points[0].Y + y * 2);
+                    cellCol = cells[2, i, l];
+                    PaintCell(e, points, cellCol);
 
                     // Side x
-                    cellPoints[0] = new Point((int)(300 - (i + 1) * x), (int)(300 + l * y - (i + 1) / 2 * y));
-                    cellPoints[1] = new Point((int)(300 - i * x), (int)(300 + l * y - i * y / 2));
-                    cellPoints[2] = new Point((int)(300 - i * x), (int)(300 + (l + 1) * y - i * y / 2));
-                    cellPoints[3] = new Point((int)(300 - (i + 1) * x), (int)(300 + (l + 1) * y - (i + 1) * y / 2));
-                    cellColor = cells[1, (int) l, + (int)( 2 - i )];
-                    PaintCell(e, cellPoints, cellColor);
+                    points[0] = new Point(l * x, 123 + y * (i * 2 + l));
+                    points[1] = new Point(points[0].X + x, points[0].Y + y);
+                    points[2] = new Point(points[1].X, points[1].Y + y * 2);
+                    points[3] = new Point(points[0].X, points[0].Y + y * 2);
+                    cellCol = cells[1, i, l];
+                    PaintCell(e, points, cellCol);
 
                     // Side z
-                    cellPoints[0] = new Point((int)(300 - (i - l) * x), (int)(300 - (i + l + 2) / 2 * y));
-                    cellPoints[1] = new Point((int)(300 - (i - l - 1) * x), (int)(300 - (i + l + 1) / 2 * y));
-                    cellPoints[2] = new Point((int)(300 - (i - l) * x), (int)(300 - (i + l) / 2 * y));
-                    cellPoints[3] = new Point((int)(300 - (i - l + 1) * x), (int)(300 - (i + l + 1) / 2 * y));
-                    cellColor = cells[4, (int)(2 - l), (int)(2 - i)];
-                    PaintCell(e, cellPoints, cellColor);
+                    points[0] = new Point(213 + (l - i) * x, y * (i + l));
+                    points[1] = new Point(points[0].X + x, points[0].Y + y);
+                    points[2] = new Point(points[0].X, points[0].Y + y * 2);
+                    points[3] = new Point(points[0].X - x, points[1].Y);
+                    cellCol = cells[4, i, l];
+                    PaintCell(e, points, cellCol);
                 }
             }
         }
@@ -106,9 +101,34 @@ namespace Rubicks_Cube
             points[0] = new Point(points[0].X + 1, points[0].Y - temp);
 
             FillMode newFillMode = FillMode.Winding;
+            SolidBrush brush = new SolidBrush(color);
 
             // Draw polygon to screen.
-            e.Graphics.FillPolygon(new SolidBrush(color), points, newFillMode);
+            e.Graphics.FillPolygon(brush, points, newFillMode);
+        }
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+            int height = 120;
+            int width;
+            Pen blackPen = new Pen(Color.Black, 1);
+            for (int side = 0; side < 6; side++)
+            {
+                if (side > 3)
+                {
+                    height = side == 4 ? 0 : 240;
+                    width = 120;
+                }
+                else width = side * 120;
+                for (int i = 0; i < 3; i++)
+                {
+                    for (int l = 0; l < 3; l++)
+                    {
+                        e.Graphics.DrawRectangle(blackPen, width + l * 40, height + i * 40, 40, 40);
+                        SolidBrush brush = new SolidBrush(cells[side, i, l]);
+                        e.Graphics.FillRectangle(brush, width + l * 40 + 1, height + i * 40 + 1, 39, 39);
+                    }
+                }
+            }
         }
 
 
@@ -120,23 +140,100 @@ namespace Rubicks_Cube
 
         private void z1_Click(object sender, EventArgs e)
         {
-            Z_Flip(1, 1);
-
+            Z_Rotate(0, true);
         }
-        private void Z_Flip(int row, int direction)
+
+
+        private void Z_Rotate(int row, bool clockwise)
         {
             Color[,,] colorsCopy = new Color[6, 3, 3];
             Array.Copy(cells, colorsCopy, cells.Length);
             int b;
             for (int a = 0; a < 4; a++)
             {
-                if (direction != 1) b = a == 3 ? 0 : a + 1;
+                if (clockwise != true) b = a == 3 ? 0 : a + 1;
                 else b = a == 0 ? 3 : a - 1;
                 for (int l = 0; l < 3; l++)
                 {
                     cells[b, row, l] = colorsCopy[a, row, l];
                 }
             }
+
+            if (row != 1)
+            {
+                int side = row == 0 ? 4 : 5;
+                SideRotate(side, clockwise);
+            }
+            panel1.Invalidate();
+            panel2.Invalidate();
+
         }
+        private void Y_Rotate(int column, bool clockwise)
+        {
+            Color[,,] colorsCopy = new Color[6, 3, 3];
+            Array.Copy(cells, colorsCopy, cells.Length);
+            int[] sideOrder = { 1, 4, 3, 5 };
+            int b;
+            for (int a = 0; a < 4; a++)
+            {
+                if (clockwise) b = a == 3 ? 1 : sideOrder[a + 1];
+                else b = a == 0 ? 5 : sideOrder[a - 1];
+                for (int l = 0; l < 3; l++)
+                {
+                    cells[b, l, column] = colorsCopy[a, l, column];
+                }
+            }
+
+            if (column != 1)
+            {
+                clockwise = column == 2 ? clockwise : !clockwise;
+                SideRotate(column, clockwise);
+            }
+            panel1.Invalidate();
+            panel2.Invalidate();
+
+
+        }
+
+        private void SideRotate(int side, bool clockwise)
+        {
+            Color[,,] colorsCopy = new Color[6, 3, 3];
+            Array.Copy(cells, colorsCopy, cells.Length);
+
+            if (clockwise)
+            {
+                cells[side, 0, 0] = colorsCopy[side, 2, 0];
+                cells[side, 0, 1] = colorsCopy[side, 1, 0];
+                cells[side, 0, 2] = colorsCopy[side, 0, 0];
+                cells[side, 1, 0] = colorsCopy[side, 2, 1];
+                cells[side, 1, 2] = colorsCopy[side, 0, 1];
+                cells[side, 2, 0] = colorsCopy[side, 2, 2];
+                cells[side, 2, 1] = colorsCopy[side, 1, 2];
+                cells[side, 2, 2] = colorsCopy[side, 0, 2];
+            } else
+            {
+                cells[side, 0, 0] = colorsCopy[side, 2, 0];
+                cells[side, 0, 1] = colorsCopy[side, 1, 0];
+                cells[side, 0, 2] = colorsCopy[side, 0, 0];
+                cells[side, 1, 0] = colorsCopy[side, 2, 1];
+                cells[side, 1, 2] = colorsCopy[side, 0, 1];
+                cells[side, 2, 0] = colorsCopy[side, 2, 2];
+                cells[side, 2, 1] = colorsCopy[side, 1, 2];
+                cells[side, 2, 2] = colorsCopy[side, 0, 2];
+            }
+        }
+
+        private void z2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void y1_Click(object sender, EventArgs e)
+        {
+            Y_Rotate(2, true);
+            panel1.Invalidate();
+        }
+
+        
     }
 }
