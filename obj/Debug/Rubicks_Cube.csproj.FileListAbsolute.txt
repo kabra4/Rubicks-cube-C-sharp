@@ -11,10 +11,10 @@ D:\Programming\C#\Start\Rubicks_Cube\obj\Debug\Rubicks_Cube.pdb
 D:\Programming\C#\Start\Rubicks-cube-C-sharp\bin\Debug\Rubicks_Cube.exe.config
 D:\Programming\C#\Start\Rubicks-cube-C-sharp\bin\Debug\Rubicks_Cube.exe
 D:\Programming\C#\Start\Rubicks-cube-C-sharp\bin\Debug\Rubicks_Cube.pdb
-D:\Programming\C#\Start\Rubicks-cube-C-sharp\obj\Debug\Rubicks_Cube.csprojAssemblyReference.cache
 D:\Programming\C#\Start\Rubicks-cube-C-sharp\obj\Debug\Rubicks_Cube.Form1.resources
 D:\Programming\C#\Start\Rubicks-cube-C-sharp\obj\Debug\Rubicks_Cube.Properties.Resources.resources
 D:\Programming\C#\Start\Rubicks-cube-C-sharp\obj\Debug\Rubicks_Cube.csproj.GenerateResource.cache
 D:\Programming\C#\Start\Rubicks-cube-C-sharp\obj\Debug\Rubicks_Cube.csproj.CoreCompileInputs.cache
 D:\Programming\C#\Start\Rubicks-cube-C-sharp\obj\Debug\Rubicks_Cube.exe
 D:\Programming\C#\Start\Rubicks-cube-C-sharp\obj\Debug\Rubicks_Cube.pdb
+D:\Programming\C#\Start\Rubicks-cube-C-sharp\obj\Debug\Rubicks_Cube.csprojAssemblyReference.cache
