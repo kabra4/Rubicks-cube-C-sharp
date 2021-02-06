@@ -52,6 +52,8 @@ namespace Rubicks_Cube
             this.zRotate00 = new Rubicks_Cube.RoundButton();
             this.zRotate01 = new Rubicks_Cube.RoundButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -97,6 +99,7 @@ namespace Rubicks_Cube
             this.yRotateAll.Size = new System.Drawing.Size(50, 50);
             this.yRotateAll.TabIndex = 0;
             this.yRotateAll.UseVisualStyleBackColor = false;
+            this.yRotateAll.Click += new System.EventHandler(this.yRotateAll_Click);
             // 
             // zRotate20
             // 
@@ -106,11 +109,12 @@ namespace Rubicks_Cube
             this.zRotate20.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.zRotate20.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.zRotate20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.zRotate20.Location = new System.Drawing.Point(497, 338);
+            this.zRotate20.Location = new System.Drawing.Point(497, 349);
             this.zRotate20.Name = "zRotate20";
             this.zRotate20.Size = new System.Drawing.Size(50, 50);
             this.zRotate20.TabIndex = 0;
             this.zRotate20.UseVisualStyleBackColor = false;
+            this.zRotate20.Click += new System.EventHandler(this.zRotate20_Click);
             // 
             // xRotate00
             // 
@@ -120,11 +124,12 @@ namespace Rubicks_Cube
             this.xRotate00.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.xRotate00.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.xRotate00.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.xRotate00.Location = new System.Drawing.Point(47, 94);
+            this.xRotate00.Location = new System.Drawing.Point(55, 105);
             this.xRotate00.Name = "xRotate00";
             this.xRotate00.Size = new System.Drawing.Size(50, 50);
             this.xRotate00.TabIndex = 0;
             this.xRotate00.UseVisualStyleBackColor = false;
+            this.xRotate00.Click += new System.EventHandler(this.xRotate00_Click);
             // 
             // xRotate10
             // 
@@ -134,11 +139,12 @@ namespace Rubicks_Cube
             this.xRotate10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.xRotate10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.xRotate10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.xRotate10.Location = new System.Drawing.Point(103, 43);
+            this.xRotate10.Location = new System.Drawing.Point(124, 65);
             this.xRotate10.Name = "xRotate10";
             this.xRotate10.Size = new System.Drawing.Size(50, 50);
             this.xRotate10.TabIndex = 0;
             this.xRotate10.UseVisualStyleBackColor = false;
+            this.xRotate10.Click += new System.EventHandler(this.xRotate10_Click);
             // 
             // xRotate20
             // 
@@ -148,11 +154,12 @@ namespace Rubicks_Cube
             this.xRotate20.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.xRotate20.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.xRotate20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.xRotate20.Location = new System.Drawing.Point(184, 23);
+            this.xRotate20.Location = new System.Drawing.Point(191, 27);
             this.xRotate20.Name = "xRotate20";
             this.xRotate20.Size = new System.Drawing.Size(50, 50);
             this.xRotate20.TabIndex = 0;
             this.xRotate20.UseVisualStyleBackColor = false;
+            this.xRotate20.Click += new System.EventHandler(this.xRotate20_Click);
             // 
             // yRotate21
             // 
@@ -162,11 +169,12 @@ namespace Rubicks_Cube
             this.yRotate21.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.yRotate21.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.yRotate21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.yRotate21.Location = new System.Drawing.Point(335, 23);
+            this.yRotate21.Location = new System.Drawing.Point(307, 27);
             this.yRotate21.Name = "yRotate21";
             this.yRotate21.Size = new System.Drawing.Size(50, 50);
             this.yRotate21.TabIndex = 0;
             this.yRotate21.UseVisualStyleBackColor = false;
+            this.yRotate21.Click += new System.EventHandler(this.yRotate21_Click);
             // 
             // yRotate01
             // 
@@ -177,7 +185,7 @@ namespace Rubicks_Cube
             this.yRotate01.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.yRotate01.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.yRotate01.ForeColor = System.Drawing.Color.Green;
-            this.yRotate01.Location = new System.Drawing.Point(456, 94);
+            this.yRotate01.Location = new System.Drawing.Point(446, 106);
             this.yRotate01.Name = "yRotate01";
             this.yRotate01.Size = new System.Drawing.Size(50, 50);
             this.yRotate01.TabIndex = 0;
@@ -192,11 +200,12 @@ namespace Rubicks_Cube
             this.yRotate11.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.yRotate11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.yRotate11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.yRotate11.Location = new System.Drawing.Point(400, 54);
+            this.yRotate11.Location = new System.Drawing.Point(377, 65);
             this.yRotate11.Name = "yRotate11";
             this.yRotate11.Size = new System.Drawing.Size(50, 50);
             this.yRotate11.TabIndex = 0;
             this.yRotate11.UseVisualStyleBackColor = false;
+            this.yRotate11.Click += new System.EventHandler(this.yRotate11_Click);
             // 
             // xRotate11
             // 
@@ -206,11 +215,12 @@ namespace Rubicks_Cube
             this.xRotate11.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.xRotate11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.xRotate11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.xRotate11.Location = new System.Drawing.Point(377, 518);
+            this.xRotate11.Location = new System.Drawing.Point(363, 492);
             this.xRotate11.Name = "xRotate11";
             this.xRotate11.Size = new System.Drawing.Size(50, 50);
             this.xRotate11.TabIndex = 0;
             this.xRotate11.UseVisualStyleBackColor = false;
+            this.xRotate11.Click += new System.EventHandler(this.xRotate11_Click);
             // 
             // xRotate21
             // 
@@ -220,11 +230,12 @@ namespace Rubicks_Cube
             this.xRotate21.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.xRotate21.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.xRotate21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.xRotate21.Location = new System.Drawing.Point(433, 475);
+            this.xRotate21.Location = new System.Drawing.Point(433, 453);
             this.xRotate21.Name = "xRotate21";
             this.xRotate21.Size = new System.Drawing.Size(50, 50);
             this.xRotate21.TabIndex = 0;
             this.xRotate21.UseVisualStyleBackColor = false;
+            this.xRotate21.Click += new System.EventHandler(this.xRotate21_Click);
             // 
             // xRotate01
             // 
@@ -234,7 +245,7 @@ namespace Rubicks_Cube
             this.xRotate01.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.xRotate01.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.xRotate01.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.xRotate01.Location = new System.Drawing.Point(294, 534);
+            this.xRotate01.Location = new System.Drawing.Point(291, 533);
             this.xRotate01.Name = "xRotate01";
             this.xRotate01.Size = new System.Drawing.Size(50, 50);
             this.xRotate01.TabIndex = 0;
@@ -249,11 +260,12 @@ namespace Rubicks_Cube
             this.yRotate00.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.yRotate00.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.yRotate00.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.yRotate00.Location = new System.Drawing.Point(159, 534);
+            this.yRotate00.Location = new System.Drawing.Point(209, 533);
             this.yRotate00.Name = "yRotate00";
             this.yRotate00.Size = new System.Drawing.Size(50, 50);
             this.yRotate00.TabIndex = 0;
             this.yRotate00.UseVisualStyleBackColor = false;
+            this.yRotate00.Click += new System.EventHandler(this.yRotate00_Click);
             // 
             // yRotate10
             // 
@@ -263,11 +275,12 @@ namespace Rubicks_Cube
             this.yRotate10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.yRotate10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.yRotate10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.yRotate10.Location = new System.Drawing.Point(103, 502);
+            this.yRotate10.Location = new System.Drawing.Point(137, 492);
             this.yRotate10.Name = "yRotate10";
             this.yRotate10.Size = new System.Drawing.Size(50, 50);
             this.yRotate10.TabIndex = 0;
             this.yRotate10.UseVisualStyleBackColor = false;
+            this.yRotate10.Click += new System.EventHandler(this.yRotate10_Click);
             // 
             // zRotate21
             // 
@@ -277,11 +290,12 @@ namespace Rubicks_Cube
             this.zRotate21.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.zRotate21.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.zRotate21.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.zRotate21.Location = new System.Drawing.Point(3, 338);
+            this.zRotate21.Location = new System.Drawing.Point(3, 349);
             this.zRotate21.Name = "zRotate21";
             this.zRotate21.Size = new System.Drawing.Size(50, 50);
             this.zRotate21.TabIndex = 0;
             this.zRotate21.UseVisualStyleBackColor = false;
+            this.zRotate21.Click += new System.EventHandler(this.zRotate21_Click);
             // 
             // xRotateAll
             // 
@@ -291,11 +305,12 @@ namespace Rubicks_Cube
             this.xRotateAll.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.xRotateAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.xRotateAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.xRotateAll.Location = new System.Drawing.Point(159, 336);
+            this.xRotateAll.Location = new System.Drawing.Point(143, 336);
             this.xRotateAll.Name = "xRotateAll";
             this.xRotateAll.Size = new System.Drawing.Size(50, 50);
             this.xRotateAll.TabIndex = 0;
             this.xRotateAll.UseVisualStyleBackColor = false;
+            this.xRotateAll.Click += new System.EventHandler(this.xRotateAll_Click);
             // 
             // zRotateAll
             // 
@@ -305,11 +320,12 @@ namespace Rubicks_Cube
             this.zRotateAll.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.zRotateAll.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.zRotateAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.zRotateAll.Location = new System.Drawing.Point(255, 125);
+            this.zRotateAll.Location = new System.Drawing.Point(251, 150);
             this.zRotateAll.Name = "zRotateAll";
             this.zRotateAll.Size = new System.Drawing.Size(50, 50);
             this.zRotateAll.TabIndex = 0;
             this.zRotateAll.UseVisualStyleBackColor = false;
+            this.zRotateAll.Click += new System.EventHandler(this.zRotateAll_Click);
             // 
             // yRotate20
             // 
@@ -319,11 +335,12 @@ namespace Rubicks_Cube
             this.yRotate20.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.yRotate20.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.yRotate20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.yRotate20.Location = new System.Drawing.Point(47, 459);
+            this.yRotate20.Location = new System.Drawing.Point(67, 453);
             this.yRotate20.Name = "yRotate20";
             this.yRotate20.Size = new System.Drawing.Size(50, 50);
             this.yRotate20.TabIndex = 0;
             this.yRotate20.UseVisualStyleBackColor = false;
+            this.yRotate20.Click += new System.EventHandler(this.yRotate20_Click);
             // 
             // zRotate10
             // 
@@ -333,11 +350,12 @@ namespace Rubicks_Cube
             this.zRotate10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.zRotate10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.zRotate10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.zRotate10.Location = new System.Drawing.Point(497, 260);
+            this.zRotate10.Location = new System.Drawing.Point(497, 268);
             this.zRotate10.Name = "zRotate10";
             this.zRotate10.Size = new System.Drawing.Size(50, 50);
             this.zRotate10.TabIndex = 0;
             this.zRotate10.UseVisualStyleBackColor = false;
+            this.zRotate10.Click += new System.EventHandler(this.zRotate10_Click);
             // 
             // zRotate11
             // 
@@ -347,11 +365,12 @@ namespace Rubicks_Cube
             this.zRotate11.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.zRotate11.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.zRotate11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.zRotate11.Location = new System.Drawing.Point(3, 260);
+            this.zRotate11.Location = new System.Drawing.Point(3, 268);
             this.zRotate11.Name = "zRotate11";
             this.zRotate11.Size = new System.Drawing.Size(50, 50);
             this.zRotate11.TabIndex = 0;
             this.zRotate11.UseVisualStyleBackColor = false;
+            this.zRotate11.Click += new System.EventHandler(this.zRotate11_Click);
             // 
             // zRotate00
             // 
@@ -361,11 +380,12 @@ namespace Rubicks_Cube
             this.zRotate00.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.zRotate00.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.zRotate00.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.zRotate00.Location = new System.Drawing.Point(500, 181);
+            this.zRotate00.Location = new System.Drawing.Point(497, 183);
             this.zRotate00.Name = "zRotate00";
             this.zRotate00.Size = new System.Drawing.Size(50, 50);
             this.zRotate00.TabIndex = 0;
             this.zRotate00.UseVisualStyleBackColor = false;
+            this.zRotate00.Click += new System.EventHandler(this.zRotate00_Click);
             // 
             // zRotate01
             // 
@@ -375,19 +395,46 @@ namespace Rubicks_Cube
             this.zRotate01.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Blue;
             this.zRotate01.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.zRotate01.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.zRotate01.Location = new System.Drawing.Point(3, 181);
+            this.zRotate01.Location = new System.Drawing.Point(3, 183);
             this.zRotate01.Name = "zRotate01";
             this.zRotate01.Size = new System.Drawing.Size(50, 50);
             this.zRotate01.TabIndex = 0;
             this.zRotate01.UseVisualStyleBackColor = false;
+            this.zRotate01.Click += new System.EventHandler(this.zRotate01_Click);
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(627, 55);
+            this.panel2.Location = new System.Drawing.Point(627, 109);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(541, 406);
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(150)))), ((int)(((byte)(255)))), ((int)(((byte)(230)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button1.Location = new System.Drawing.Point(627, 39);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(80, 40);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "New";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.button2.Location = new System.Drawing.Point(713, 39);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(80, 40);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "Shuffle";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
@@ -395,6 +442,8 @@ namespace Rubicks_Cube
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.ClientSize = new System.Drawing.Size(1208, 620);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
@@ -429,6 +478,8 @@ namespace Rubicks_Cube
         private RoundButton yRotateAll;
         private RoundButton xRotateAll;
         private RoundButton zRotateAll;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

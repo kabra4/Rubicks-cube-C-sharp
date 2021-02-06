@@ -124,7 +124,11 @@ namespace Rubicks_Cube
             Pen blackPen = new Pen(Color.Black, 1);
             e.Graphics.DrawPolygon(blackPen, points);
         }
-
+        private void Valid()
+        {
+            panel1.Invalidate();
+            panel2.Invalidate();
+        }
 
         // Rotating Cube sides
         private void Form1_Load(object sender, EventArgs e)
@@ -150,8 +154,8 @@ namespace Rubicks_Cube
             }
             if (row != 1)
             {
-                int side = (row == 0) ? 4 : 5;
-                SideRotate(side, clockwise);
+                if (row != 0) clockwise = !clockwise;
+                SideRotate(4 + row / 2, clockwise);
             }
         }
         private void Y_Rotate(int column, bool clockwise)
@@ -173,7 +177,7 @@ namespace Rubicks_Cube
             }
             if (column != 1)
             {
-                if (column == 0) clockwise = !clockwise;
+                if (column == 2) clockwise = !clockwise;
                 SideRotate(2 - column, clockwise);
             }
         }
@@ -204,6 +208,11 @@ namespace Rubicks_Cube
                     }
                 }
             }
+            if (column != 1)
+            {
+                if (column == 2) clockwise = !clockwise;
+                SideRotate(1 + column, clockwise);
+            }
         }
 
         private void SideRotate(int side, bool clockwise)
@@ -221,18 +230,161 @@ namespace Rubicks_Cube
         }
 
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            NewCube();
+            Valid();
+        }
 
-        
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Random rnd = new Random();
+            int axis, row;
+            bool clockwise;
+            for (int i = 0; i < 20; i++)
+            {
+                axis = rnd.Next(3);
+                row = rnd.Next(3);
+                clockwise = rnd.Next(2) > 0;
+                if (axis == 0) X_Rotate(row, clockwise);
+                else if (axis == 1) Y_Rotate(row, clockwise);
+                else Z_Rotate(row, clockwise);
+            }
+            Valid();
+        }
+
+        private void zRotate01_Click(object sender, EventArgs e)
+        {
+            Z_Rotate(0, true);
+            Valid();
+        }
+
+        private void zRotate11_Click(object sender, EventArgs e)
+        {
+            Z_Rotate(1, true);
+            Valid();
+        }
+
+        private void zRotate21_Click(object sender, EventArgs e)
+        {
+            Z_Rotate(2, true);
+            Valid();
+        }
+
+        private void zRotate00_Click(object sender, EventArgs e)
+        {
+            Z_Rotate(0, false);
+            Valid();
+        }
+
+        private void zRotate10_Click(object sender, EventArgs e)
+        {
+            Z_Rotate(1, false);
+            Valid();
+        }
+
+        private void zRotate20_Click(object sender, EventArgs e)
+        {
+            Z_Rotate(2, false);
+            Valid();
+        }
 
         private void yRotate1_Click(object sender, EventArgs e)
         {
+            Y_Rotate(0, true);
+            Valid();
+        }
+
+        private void yRotate11_Click(object sender, EventArgs e)
+        {
+            Y_Rotate(1, true);
+            Valid();
+        }
+
+        private void yRotate21_Click(object sender, EventArgs e)
+        {
+            Y_Rotate(2, true);
+            Valid();
+        }
+
+        private void yRotate00_Click(object sender, EventArgs e)
+        {
+            Y_Rotate(0, false);
+            Valid();
+        }
+
+        private void yRotate10_Click(object sender, EventArgs e)
+        {
+            Y_Rotate(1, false);
+            Valid();
+        }
+
+        private void yRotate20_Click(object sender, EventArgs e)
+        {
+            Y_Rotate(2, false);
+            Valid();
         }
 
         private void xRotate01_Click(object sender, EventArgs e)
         {
             X_Rotate(0, true);
-            panel1.Invalidate();
-            panel2.Invalidate();
+            Valid();
         }
+
+        private void xRotate11_Click(object sender, EventArgs e)
+        {
+            X_Rotate(1, true);
+            Valid();
+        }
+
+        private void xRotate21_Click(object sender, EventArgs e)
+        {
+            X_Rotate(2, true);
+            Valid();
+        }
+
+        private void xRotate00_Click(object sender, EventArgs e)
+        {
+            X_Rotate(0, false);
+            Valid();
+        }
+
+        private void xRotate10_Click(object sender, EventArgs e)
+        {
+            X_Rotate(1, false);
+            Valid();
+        }
+
+        private void xRotate20_Click(object sender, EventArgs e)
+        {
+            X_Rotate(2, false);
+            Valid();
+        }
+
+        private void xRotateAll_Click(object sender, EventArgs e)
+        {
+            X_Rotate(0, true);
+            X_Rotate(1, true);
+            X_Rotate(2, true);
+            Valid();
+        }
+
+        private void yRotateAll_Click(object sender, EventArgs e)
+        {
+            Y_Rotate(0, true);
+            Y_Rotate(1, true);
+            Y_Rotate(2, true);
+            Valid();
+        }
+
+        private void zRotateAll_Click(object sender, EventArgs e)
+        {
+            Z_Rotate(0, true);
+            Z_Rotate(1, true);
+            Z_Rotate(2, true);
+            Valid();
+        }
+
+        
     }
 }

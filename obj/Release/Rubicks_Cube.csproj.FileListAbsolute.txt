@@ -1,0 +1,10 @@
+D:\Programming\C#\Start\Rubicks-cube-C-sharp\bin\Release\Rubicks_Cube.exe.config
+D:\Programming\C#\Start\Rubicks-cube-C-sharp\bin\Release\Rubicks_Cube.exe
+D:\Programming\C#\Start\Rubicks-cube-C-sharp\bin\Release\Rubicks_Cube.pdb
+D:\Programming\C#\Start\Rubicks-cube-C-sharp\obj\Release\Rubicks_Cube.csprojAssemblyReference.cache
+D:\Programming\C#\Start\Rubicks-cube-C-sharp\obj\Release\Rubicks_Cube.Form1.resources
+D:\Programming\C#\Start\Rubicks-cube-C-sharp\obj\Release\Rubicks_Cube.Properties.Resources.resources
+D:\Programming\C#\Start\Rubicks-cube-C-sharp\obj\Release\Rubicks_Cube.csproj.GenerateResource.cache
+D:\Programming\C#\Start\Rubicks-cube-C-sharp\obj\Release\Rubicks_Cube.csproj.CoreCompileInputs.cache
+D:\Programming\C#\Start\Rubicks-cube-C-sharp\obj\Release\Rubicks_Cube.exe
+D:\Programming\C#\Start\Rubicks-cube-C-sharp\obj\Release\Rubicks_Cube.pdb
