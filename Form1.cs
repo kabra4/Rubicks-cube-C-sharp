@@ -51,18 +51,18 @@ namespace Rubicks_Cube
         }
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
-            int height = 120;
-            int width;
+            int height = 125;
+            int width, margin;
             Pen blackPen = new Pen(Color.Black, 1);
             SolidBrush brush;
             for (int side = 0; side < 6; side++)
             {
                 if (side > 3)
                 {
-                    height = side == 4 ? 0 : 240;
-                    width = 120;
+                    height = side == 4 ? 0 : 250;
+                    width = 125;
                 }
-                else width = side * 120;
+                else width = side * 125;
                 for (int i = 0; i < 3; i++)
                 {
                     for (int l = 0; l < 3; l++)
@@ -131,13 +131,6 @@ namespace Rubicks_Cube
         }
 
         // Rotating Cube sides
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
-
         private void Z_Rotate(int row, bool clockwise) // rotating cube along z-axis
         {
             Color[,,] colorsCopy = new Color[6, 3, 3];
@@ -241,7 +234,7 @@ namespace Rubicks_Cube
             Random rnd = new Random();
             int axis, row;
             bool clockwise;
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 25; i++)
             {
                 axis = rnd.Next(3);
                 row = rnd.Next(3);
@@ -385,6 +378,11 @@ namespace Rubicks_Cube
             Valid();
         }
 
-        
+        private void Form1_Load(object sender, EventArgs e) { }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
