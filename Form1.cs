@@ -29,6 +29,7 @@ namespace Rubicks_Cube
             Color.Blue,
             Color.Lime
         };
+        private bool shuffled;
         private void NewCube() // Sets all colors of cube to default
         {
             for (int s = 0; s < 6; s++)
@@ -52,7 +53,7 @@ namespace Rubicks_Cube
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
             int height = 125;
-            int width, margin;
+            int width;
             Pen blackPen = new Pen(Color.Black, 1);
             SolidBrush brush;
             for (int side = 0; side < 6; side++)
@@ -128,6 +129,7 @@ namespace Rubicks_Cube
         {
             panel1.Invalidate();
             panel2.Invalidate();
+            CubeProgress();
         }
 
         // Rotating Cube sides
@@ -222,13 +224,15 @@ namespace Rubicks_Cube
             }
         }
 
-
+        // "New" button
         private void button1_Click(object sender, EventArgs e)
         {
+            shuffled = false;
             NewCube();
             Valid();
         }
 
+        // Shuffle button
         private void button2_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
@@ -244,6 +248,7 @@ namespace Rubicks_Cube
                 else Z_Rotate(row, clockwise);
             }
             Valid();
+            shuffled = true;
         }
 
         private void zRotate01_Click(object sender, EventArgs e)
@@ -381,6 +386,43 @@ namespace Rubicks_Cube
         private void Form1_Load(object sender, EventArgs e) { }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CubeProgress()
+        {
+            int[] nColors = new int[6];
+            float[] avgMaxCol = new float[6];
+            for (int side = 0; side < 6; side++)
+            {
+                // making arrays default
+                for (int i = 0; i < 6; i++)
+                {
+                    nColors[i] = 0;
+                }
+                for (int row = 0; row < 3; row++)
+                {
+                    for (int col = 0; col < 3; col++)
+                    {
+                        for (int color = 0; color < 6; color++)
+                        {
+                            if (cells[side, row, col] == colors[color]) nColors[color]++;
+                        }
+                    }
+                }
+                avgMaxCol[side] = (float)nColors.Max() / 9;
+            }
+            float averag = avgMaxCol.Average();
+            if (averag < 0.3) averag = (float)0.3;
+            progressBar1.Value = (int) (averag * 100);
+
+            if (progressBar1.Value == 100 && shuffled)
+            {
+                MessageBox.Show("Congrats!\nYou have solved all sides");
+            }
+        }
+        private void progressBar1_Click(object sender, EventArgs e)
         {
 
         }
