@@ -29,6 +29,7 @@ namespace Rubicks_Cube
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -36,6 +37,8 @@ namespace Rubicks_Cube
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label2 = new System.Windows.Forms.Label();
             this.yRotateAll = new Rubicks_Cube.RoundButton();
             this.zRotate20 = new Rubicks_Cube.RoundButton();
             this.xRotate00 = new Rubicks_Cube.RoundButton();
@@ -108,7 +111,6 @@ namespace Rubicks_Cube
             this.label1.Size = new System.Drawing.Size(123, 17);
             this.label1.TabIndex = 4;
             this.label1.Text = "By Akbar Abdujalilov";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 
@@ -145,7 +147,21 @@ namespace Rubicks_Cube
             this.progressBar1.Step = 1;
             this.progressBar1.TabIndex = 4;
             this.progressBar1.Value = 30;
-            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(752, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(114, 25);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "00:00:00.0";
             // 
             // yRotateAll
             // 
@@ -161,7 +177,7 @@ namespace Rubicks_Cube
             this.yRotateAll.Size = new System.Drawing.Size(50, 50);
             this.yRotateAll.TabIndex = 0;
             this.yRotateAll.UseVisualStyleBackColor = false;
-            this.yRotateAll.Click += new System.EventHandler(this.yRotateAll_Click);
+            this.yRotateAll.MouseDown += new System.Windows.Forms.MouseEventHandler(this.yRotateAll_MouseDown);
             // 
             // zRotate20
             // 
@@ -386,7 +402,7 @@ namespace Rubicks_Cube
             this.xRotateAll.Size = new System.Drawing.Size(50, 50);
             this.xRotateAll.TabIndex = 0;
             this.xRotateAll.UseVisualStyleBackColor = false;
-            this.xRotateAll.Click += new System.EventHandler(this.xRotateAll_Click);
+            this.xRotateAll.MouseDown += new System.Windows.Forms.MouseEventHandler(this.xRotateAll_MouseDown);
             // 
             // zRotateAll
             // 
@@ -402,7 +418,7 @@ namespace Rubicks_Cube
             this.zRotateAll.Size = new System.Drawing.Size(50, 50);
             this.zRotateAll.TabIndex = 0;
             this.zRotateAll.UseVisualStyleBackColor = false;
-            this.zRotateAll.Click += new System.EventHandler(this.zRotateAll_Click);
+            this.zRotateAll.MouseDown += new System.Windows.Forms.MouseEventHandler(this.zRotateAll_MouseDown);
             // 
             // yRotate20
             // 
@@ -488,8 +504,9 @@ namespace Rubicks_Cube
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
+            this.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.ClientSize = new System.Drawing.Size(1243, 618);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel2);
@@ -499,11 +516,11 @@ namespace Rubicks_Cube
             this.MinimumSize = new System.Drawing.Size(1259, 657);
             this.Name = "Form1";
             this.Text = "Rubiks Cube";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -535,6 +552,8 @@ namespace Rubicks_Cube
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label2;
     }
 }
 
