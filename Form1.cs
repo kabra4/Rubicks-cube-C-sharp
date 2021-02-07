@@ -256,7 +256,8 @@ namespace Rubicks_Cube
                         break;
                 }
             }
-            Valid();
+            panel1.Invalidate();
+            panel2.Invalidate();
         }
         private void SideRotate(int side, bool clockwise)
         {
